@@ -1,0 +1,33 @@
+//*************************
+// * Автор: Прожикин Игорь*
+// * Название : лаба линейные*
+// *************************//
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+
+  int t = 0;
+
+  double lambda1 = 0.0025;
+  double lambda2 = 0.0015;
+  double lambda3 = 0.0016;
+
+
+  while (t <= 1000)
+  {
+    double P = 100 * ((lambda2 - lambda3) * exp(-(lambda1 + lambda2) * t) * lambda1 * exp(-1 * t)) / (lambda1 + lambda2 - lambda3);
+
+    cout << t << P << "%" << endl;
+
+    if (t < 200)
+      t = t + 50;
+    else
+      t = t + 200;
+  }
+
+  return 0;
+}
